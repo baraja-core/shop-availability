@@ -14,5 +14,8 @@ final class ShopAvailabilityExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 		OrmAnnotationsExtension::addAnnotationPathToManager($builder, 'Baraja\Shop\Availability\Entity', __DIR__ . '/Entity');
+
+		$builder->addDefinition($this->prefix('availabilityManager'))
+			->setFactory(AvailabilityManager::class);
 	}
 }
