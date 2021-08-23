@@ -16,6 +16,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @method string getDescription(?string $locale = null)
  * @method void setDescription(?string $description = null, ?string $locale = null)
  */
+#[ORM\Entity]
+#[ORM\Table(name: 'shop__availability')]
 class Availability
 {
 	use IdentifierUnsigned;
