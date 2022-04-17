@@ -47,10 +47,10 @@ class Availability
 	];
 
 	#[ORM\Column(type: 'translate')]
-	private Translation $name;
+	protected Translation $name;
 
 	#[ORM\Column(type: 'translate', nullable: true)]
-	private ?Translation $description = null;
+	protected ?Translation $description = null;
 
 	#[ORM\Column(type: 'string', unique: true, length: 32)]
 	private string $code;

@@ -47,7 +47,7 @@ final class AvailabilityManager
 				new Availability(
 					name: Strings::firstUpper(str_replace('-', ' ', $code)),
 					code: $code,
-					color: Availability::SYSTEM_COLORS[$code] ?? '#000000',
+					color: Availability::SYSTEM_COLORS[$code],
 				),
 			);
 		}
