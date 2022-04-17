@@ -24,26 +24,26 @@ class Availability
 	use TranslateObject;
 
 	public const
-		CODE_IN_STOCK = 'stock',
-		CODE_SOLD_OUT = 'sold-out',
-		CODE_ORDERED = 'ordered',
-		CODE_ON_REQUEST = 'on-request',
-		CODE_CURRENTLY_UNAVAILABLE = 'currently-unavailable';
+		CodeInStock = 'stock',
+		CodeSoldOut = 'sold-out',
+		CodeOrdered = 'ordered',
+		CodeOnRequest = 'on-request',
+		CodeCurrentlyUnavailable = 'currently-unavailable';
 
-	public const SYSTEM_CODES = [
-		self::CODE_IN_STOCK,
-		self::CODE_SOLD_OUT,
-		self::CODE_ORDERED,
-		self::CODE_ON_REQUEST,
-		self::CODE_CURRENTLY_UNAVAILABLE,
+	public const SystemCodes = [
+		self::CodeInStock,
+		self::CodeSoldOut,
+		self::CodeOrdered,
+		self::CodeOnRequest,
+		self::CodeCurrentlyUnavailable,
 	];
 
-	public const SYSTEM_COLORS = [
-		self::CODE_IN_STOCK => '#00ff00',
-		self::CODE_SOLD_OUT => '#ff0000',
-		self::CODE_ORDERED => '#000000',
-		self::CODE_ON_REQUEST => '#0000ff',
-		self::CODE_CURRENTLY_UNAVAILABLE => '#ff0000',
+	public const SystemColors = [
+		self::CodeInStock => '#00ff00',
+		self::CodeSoldOut => '#ff0000',
+		self::CodeOrdered => '#000000',
+		self::CodeOnRequest => '#0000ff',
+		self::CodeCurrentlyUnavailable => '#ff0000',
 	];
 
 	#[ORM\Column(type: 'translate')]

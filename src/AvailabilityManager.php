@@ -42,12 +42,12 @@ final class AvailabilityManager
 
 	private function initDefault(): void
 	{
-		foreach (Availability::SYSTEM_CODES as $code) {
+		foreach (Availability::SystemCodes as $code) {
 			$this->entityManager->persist(
 				new Availability(
 					name: Strings::firstUpper(str_replace('-', ' ', $code)),
 					code: $code,
-					color: Availability::SYSTEM_COLORS[$code],
+					color: Availability::SystemColors[$code],
 				),
 			);
 		}
