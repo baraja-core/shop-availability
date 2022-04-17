@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Baraja\Shop\Availability\Entity;
 
 
-use Baraja\Doctrine\Identifier\IdentifierUnsigned;
 use Baraja\Localization\TranslateObject;
 use Baraja\Localization\Translation;
 use Doctrine\ORM\Mapping as ORM;
@@ -20,7 +19,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'shop__availability')]
 class Availability
 {
-	use IdentifierUnsigned;
 	use TranslateObject;
 
 	public const
@@ -45,6 +43,11 @@ class Availability
 		self::CodeOnRequest => '#0000ff',
 		self::CodeCurrentlyUnavailable => '#ff0000',
 	];
+
+	#[ORM\Id]
+	#[ORM\Column(type: 'integer', unique: true, options: ['unsigned' => true])]
+	#[ORM\GeneratedValue]
+	protected int $id;
 
 	#[ORM\Column(type: 'translate')]
 	protected Translation $name;
@@ -84,6 +87,12 @@ class Availability
 		$this->setCode($code);
 		$this->setColor($color);
 		$this->setDescription($description);
+	}
+
+
+	public function getId(): int
+	{
+		return $this->id;
 	}
 
 
